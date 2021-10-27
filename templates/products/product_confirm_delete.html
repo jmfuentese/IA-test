@@ -1,0 +1,24 @@
+{% include 'base.html' %}
+
+{% block body %}
+    <div class="container" style="padding:10em">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <p>Are you sure you want to delete "{{ object }}"?</p>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">{% csrf_token %}
+                        
+                            <input type="submit" value="Confirm" class="btn btn-success">
+                            <a href="../list/" class="btn btn-danger">Cancel</a>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
